@@ -71,7 +71,7 @@ export default defineConfig({
       cssVariable: "--font-google-sans-code",
       provider: fontProviders.google(),
       fallbacks: ["monospace"],
-      weights:, // Kode eror di bawah baris ini sudah dihapus
+      weights:, // <-- Nilai angka font sudah diisi dengan benar di sini
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
     },
