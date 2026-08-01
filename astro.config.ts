@@ -20,7 +20,10 @@ import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
 export default defineConfig({
-  site: config.site.url,
+//  site: config.site.url,
+  site: 'https://github.io',
+  base: '/astropaper', // <-- Pastikan baris ini tertulis /astropaper
+  
   integrations: [
     mdx(),
     sitemap({
