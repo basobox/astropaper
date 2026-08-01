@@ -23,6 +23,7 @@ export const GET: APIRoute = async context => {
     ),
   ]);
 
+  // @ts-ignore
   const svg = await satori(
     {
       type: "div",
