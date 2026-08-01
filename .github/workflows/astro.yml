@@ -2,7 +2,7 @@ name: Deploy ke GitHub Pages
 
 on:
   push:
-    branches: [ main, master ] # Mendukung branch main atau master otomatis
+    branches: [ main, master ]
 
 permissions:
   contents: read
@@ -19,11 +19,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # Memperbarui versi ke Node 24 sesuai standar terbaru
-          cache: 'npm'
+          node-version: 24
 
       - name: Install dependencies
-        run: npm ci # Menggunakan perintah instalasi bersih (Clean Install) untuk CI/CD
+        run: npm install # Menggunakan install biasa karena tidak ada file package-lock.json
 
       - name: Build Astro Static Site
         run: npm run build
@@ -31,4 +30,4 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Menunjuk folder hasil kompilasi standar Astro
+          path: ./dist
