@@ -1,7 +1,7 @@
 import {
   defineConfig,
   envField,
-  svgoOptimizer,
+ // svgoOptimizer,
 } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -84,7 +84,7 @@ integrations: [
     },
   },
 
-  experimental: {
-    svgOptimizer: svgoOptimizer(),
-  },
+//  experimental: {
+//    svgOptimizer: svgoOptimizer(),
+//  },
 });
