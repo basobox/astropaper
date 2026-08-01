@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
-import keystatic from "@keystatic/astro";
+//import keystatic from "@keystatic/astro";
 
 import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
@@ -30,16 +30,13 @@ export default defineConfig({
   trailingSlash: "always",
   output: "static",
 
-  integrations: [
-    react(),
-    keystatic(),
-    mdx(),
-    sitemap({
-      filter: page =>
-        config.features?.showArchives !== false ||
-        !page.endsWith("/archives/"),
-    }),
-  ],
+integrations: [
+  react(),
+  mdx(),
+  sitemap({
+    ...
+  }),
+]
 
   i18n: {
     locales: ["en"],
