@@ -30,14 +30,22 @@ export default defineConfig({
   trailingSlash: "always",
   output: "static",
 
+//integrations: [
+//  react(),
+//  mdx(),
+//  sitemap({
+//    ...
+//  }),
+//]
 integrations: [
   react(),
   mdx(),
   sitemap({
-    ...
+    filter: (page) =>
+      config.features?.showArchives !== false ||
+      !page.endsWith("/archives/"),
   }),
-]
-
+],
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
