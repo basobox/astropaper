@@ -1,7 +1,6 @@
 import {
   defineConfig,
   envField,
-  fontProviders,
   svgoOptimizer,
 } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
@@ -22,7 +21,7 @@ import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
 export default defineConfig({
-  site: 'https://github.io',
+  site: 'https://basobox.github.io', // Mengembalikan alamat domain Anda yang benar
   base: '/astropaper',
   trailingSlash: 'always',
   
@@ -65,17 +64,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  fonts: [
-    {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights:, // <-- Nilai angka font sudah diisi dengan benar di sini
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
-    },
-  ],
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
