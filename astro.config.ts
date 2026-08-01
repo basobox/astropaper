@@ -21,10 +21,14 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
 //  site: config.site.url,
-  site: 'https://github.io',
+  site: 'https://basobox.github.io',
   base: '/astropaper', // <-- Pastikan baris ini tertulis /astropaper
   
   integrations: [
+    tailwind(),
+    react(),
+    keystatic(),
+    
     mdx(),
     sitemap({
       filter: page =>
